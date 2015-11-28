@@ -14,76 +14,76 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author stf
+ * @author Steve Ferguson <sfergus1@gmail.com>
  */
 public class AllocationTest {
-    private List<Asset> Assets;
-    private Map<Asset, BigDecimal> AssetMap;
-    
-    public AllocationTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-        Assets = Arrays.asList(
-            new Asset(Asset.AssetClass.Stock, new BigDecimal("55455.636"), new BigDecimal("35.7913")),
-            new Asset(Asset.AssetClass.Bond, new BigDecimal("4242.4242"), new BigDecimal("123.4567")),
-            new Asset(Asset.AssetClass.Cash, new BigDecimal("25000"), new BigDecimal("1")),
-            new Asset(Asset.AssetClass.Property, new BigDecimal("1"), new BigDecimal("180000"))
-        );
+  private List<Asset> Assets;
+  private Map<Asset, BigDecimal> AssetMap;
 
-        AssetMap = new HashMap<>();
-        AssetMap.put(Assets.get(0), new BigDecimal("0.50"));
-        AssetMap.put(Assets.get(1), new BigDecimal("0.35"));
-        AssetMap.put(Assets.get(2), new BigDecimal("0.15"));
-    }
-    
-    @After
-    public void tearDown() {
-    }
+  public AllocationTest() {
+  }
 
-    /**
-     * Test of getAssetMap method, of class Allocation.
-     */
-    @Test
-    public void testGetAssetMap() {
-        System.out.println("getAssetMap");
+  @BeforeClass
+  public static void setUpClass() {
+  }
 
-        Allocation empty = new Allocation();
-        assertNull(empty.getAssetMap());
+  @AfterClass
+  public static void tearDownClass() {
+  }
 
-        Allocation instance = new Allocation(AssetMap);
-        assertEquals(AssetMap, instance.getAssetMap());
-    }
+  @Before
+  public void setUp() {
+    Assets = Arrays.asList(
+      new Asset(Asset.AssetClass.Stock, new BigDecimal("55455.636"), new BigDecimal("35.7913")),
+      new Asset(Asset.AssetClass.Bond, new BigDecimal("4242.4242"), new BigDecimal("123.4567")),
+      new Asset(Asset.AssetClass.Cash, new BigDecimal("25000"), new BigDecimal("1")),
+      new Asset(Asset.AssetClass.Property, new BigDecimal("1"), new BigDecimal("180000"))
+    );
 
-    /**
-     * Test of setAssetMap method, of class Allocation.
-     */
-    @Test
-    public void testSetAssetMap() {
-        System.out.println("setAssetMap");
+    AssetMap = new HashMap<>();
+    AssetMap.put(Assets.get(0), new BigDecimal("0.50"));
+    AssetMap.put(Assets.get(1), new BigDecimal("0.35"));
+    AssetMap.put(Assets.get(2), new BigDecimal("0.15"));
+  }
 
-        Allocation instance = new Allocation();
-        instance.setAssetMap(AssetMap);
-        assertEquals(AssetMap, instance.getAssetMap());
-    }
+  @After
+  public void tearDown() {
+  }
 
-    /**
-     * Test of getAsset method, of class Allocation.
-     */
-    @Test
-    public void testGetAsset() {
-        System.out.println("getAsset");
+  /**
+   * Test of getAssetMap method, of class Allocation.
+   */
+  @Test
+  public void testGetAssetMap() {
+    System.out.println("getAssetMap");
 
-        Allocation instance = new Allocation(AssetMap);
-        assertEquals(AssetMap.get(Assets.get(0)), instance.getAsset(Assets.get(0)));
-    }
+    Allocation empty = new Allocation();
+    assertNull(empty.getAssetMap());
+
+    Allocation instance = new Allocation(AssetMap);
+    assertEquals(AssetMap, instance.getAssetMap());
+  }
+
+  /**
+   * Test of setAssetMap method, of class Allocation.
+   */
+  @Test
+  public void testSetAssetMap() {
+    System.out.println("setAssetMap");
+
+    Allocation instance = new Allocation();
+    instance.setAssetMap(AssetMap);
+    assertEquals(AssetMap, instance.getAssetMap());
+  }
+
+  /**
+   * Test of getAsset method, of class Allocation.
+   */
+  @Test
+  public void testGetAsset() {
+    System.out.println("getAsset");
+
+    Allocation instance = new Allocation(AssetMap);
+    assertEquals(AssetMap.get(Assets.get(0)), instance.getAsset(Assets.get(0)));
+  }
 }
