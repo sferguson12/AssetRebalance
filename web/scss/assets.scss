@@ -1,0 +1,68 @@
+/* 
+    Created on : Nov 29, 2015, 1:55:37 PM
+    Author     : Steve Ferguson <sfergus1@gmail.com>
+*/
+
+$foreground: #222;
+$shaded: #ececec;
+$size: 18px;
+$height: 22px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Calibri, Arial, sans-serif;
+  font-size: $size;
+  color: $foreground;
+  line-height: $height;
+}
+
+div, table {
+  position: relative;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+select, input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+}
+
+.number {
+  text-align: right;
+}
+
+.assetTable {
+  td {
+    padding: 2px;
+  }
+
+  select, input {
+    border: none;
+    background-color: inherit;
+    padding: 0 5px;
+  }
+
+  .assetTableEvenRow {
+    background-color: $shaded;
+  }
+
+  .assetShares {
+    @extend .number;
+  }
+
+  .assetSharePrice {
+    @extend .number;
+  }
+
+  .assetAllocation {
+    @extend .number;
+  }
+}                 

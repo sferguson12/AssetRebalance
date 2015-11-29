@@ -8,9 +8,9 @@ import java.math.BigDecimal;
  */
 public class Asset {
   public enum AssetClass { Bond, Cash, Property, Stock };
-  public enum AssetStyle { Blend, Growth, Value };
-  public enum Location { Domestic, Emerging, Foreign };
-  public enum MarketCap { Large, Micro, Mid, Small };
+  public enum AssetStyle { None, Blend, Growth, Value };
+  public enum Location { None, Domestic, Emerging, Foreign };
+  public enum MarketCap { None, Large, Micro, Mid, Small };
     
 //<editor-fold defaultstate="collapsed" desc="Properties">
   // Primary, required attributes
@@ -19,6 +19,7 @@ public class Asset {
   private BigDecimal sharePrice;
 
   // Optional attributes
+  private String name;
   private String symbol;
   private AssetStyle style;
   private Location location;
@@ -36,6 +37,7 @@ public class Asset {
   }
 
   public Asset(Asset copy) {
+    this.name = copy.name;
     this.assetClass = copy.assetClass;
     this.shares = copy.shares;
     this.sharePrice = copy.sharePrice;
@@ -48,6 +50,9 @@ public class Asset {
 //</editor-fold>
 
 //<editor-fold defaultstate="collapsed" desc="Accessors">
+  public String getName() { return name; }
+  public void setName(String value) { name = value; }
+
   public AssetClass getAssetClass() { return assetClass; }
   public void setAssetClass(AssetClass value) { assetClass = value; }
 
