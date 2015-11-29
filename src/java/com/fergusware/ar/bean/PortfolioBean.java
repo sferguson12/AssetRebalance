@@ -106,6 +106,8 @@ public class PortfolioBean {
     assets.get(1).setSymbol("VBLTX");
     assets.get(0).setAssetStyle(Asset.AssetStyle.Growth);
     assets.get(1).setAssetStyle(Asset.AssetStyle.Value);
+    assets.get(0).setLocation(Asset.Location.Domestic);
+    assets.get(1).setLocation(Asset.Location.Foreign);
     assets.get(1).setMarketCap(Asset.MarketCap.Mid);
 
     Map<Asset, BigDecimal> targetMap = new HashMap<>();
